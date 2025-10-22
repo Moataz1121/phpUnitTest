@@ -23,10 +23,6 @@ class CaregoryCreatingTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-
-
-
-
     public function test_create_category(): void
     {
         $category = Category::factory()->make();
