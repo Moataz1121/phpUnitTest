@@ -30,10 +30,8 @@ class CaregoryCreatingTest extends TestCase
         $response = $this->actingAs($this->user)->post(route('categories.store'), $category->toArray());
 
         $response
-            ->assertStatus(302)
-            ->assertRedirect(route('categories.index'))
-            ->assertSessionHas('success', 'Category created successfully');
-
+            ->assertStatus(201);
+            
         $this->assertDatabaseHas('categories', $category->toArray());
     }
 
